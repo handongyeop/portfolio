@@ -1,5 +1,6 @@
 .home-bg {
   width: 100%;
+  padding-top: 4.5rem;
   height: 750px;
   background-image: url('../../../public/images/computer.png');
   background-repeat: no-repeat;
@@ -24,7 +25,7 @@
   margin-bottom: 4rem;
 }
 
-.home-text {
+.home-content {
   text-align: center;
   line-height: 1.5rem;
 }

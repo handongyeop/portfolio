@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import About from '../About/About';
+import Archiving from '../Archiving/Archiving';
+import Skill from '../Skill/Skill';
 import './Home.css';
 
 const Home = () => {
@@ -37,11 +40,14 @@ const Home = () => {
               문제를 마주치면 궁금증이 해소될 때까지 파고드는 것이 제
               장점입니다.
               <br />
-              항상 겸손한 마음으로 끊임없이 공부하고 있습니다.
+              항상 겸손한 마음으로 끊임없이 공부하겠습니다.
             </div>
           </div>
         </div>
       </div>
+      <About />
+      <Skill />
+      <Archiving />
     </div>
   );
 };

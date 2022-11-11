@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ scrollPosition }) => {
+  const location = useLocation();
   return (
-    <header className="header">
+    <header
+      className={`${
+        location.pathname === '/' && scrollPosition === 0
+          ? 'header'
+          : 'header-white'
+      }`}
+    >
       <div className="header-wrapper">
         <div className="header-title">
           <Link to={'/'}>HDY's Portfolio</Link>

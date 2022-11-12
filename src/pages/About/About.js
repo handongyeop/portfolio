@@ -26,8 +26,7 @@ const StyledTitle = styled.div`
 `;
 
 const IntroduceContent = styled.div`
-  font-size: 1.2rem;
-  padding: 0 1rem;
+  padding: 1rem;
 `;
 
 const StyledA = styled.a`
@@ -134,7 +133,9 @@ const About = () => {
             onMouseOut={() => dispatch(floatAction.float(0))}
           >
             <StyledTitle>'호기심'은 나의 원동력</StyledTitle>
-            <IntroduceContent>내용</IntroduceContent>
+            <IntroduceContent>
+              &nbsp;호기심은 저를 가장 잘 나타낼 수 있는 단어입니다.
+            </IntroduceContent>
           </div>
           <div
             className={`introduce-box ${float === 2 && 'float'}`}
@@ -142,7 +143,7 @@ const About = () => {
             onMouseOut={() => dispatch(floatAction.float(0))}
           >
             <StyledTitle>'소통'의 리더십</StyledTitle>
-            <IntroduceContent>내용</IntroduceContent>
+            <IntroduceContent>ㅋㅋ</IntroduceContent>
           </div>
         </div>
       </div>

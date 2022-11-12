@@ -8,6 +8,7 @@ import Skill from './pages/Skill/Skill';
 import Archiving from './pages/Archiving/Archiving';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import Project from './pages/Project/Project';
 
 const FloatingBtn = styled.div`
   position: fixed;
@@ -51,6 +52,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/skill" element={<Skill />} />
         <Route path="/archiving" element={<Archiving />} />
+        <Route path="/project" element={<Project />} />
       </Routes>
       <FloatingBtn
         onClick={scrollToTop}

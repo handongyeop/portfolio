@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import About from '../About/About';
 import Archiving from '../Archiving/Archiving';
+import Project from '../Project/Project';
 import Skill from '../Skill/Skill';
 import './Home.css';
 
@@ -48,6 +49,7 @@ const Home = () => {
       <About />
       <Skill />
       <Archiving />
+      <Project />
     </div>
   );
 };

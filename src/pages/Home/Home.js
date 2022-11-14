@@ -6,17 +6,17 @@ import Skill from '../Skill/Skill';
 import './Home.css';
 
 const Home = () => {
-  const [rotate, setRotate] = useState({
+  const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
 
   const moveGreeting = (e) => {
-    setRotate({ x: (e.screenX - 700) / -10, y: (e.screenY - 500) / 10 });
+    setMousePosition({ x: (e.screenX - 719) / -10, y: (e.screenY - 450) / 10 });
   };
 
   const initGreeting = () => {
-    setRotate({ x: 0, y: 0 });
+    setMousePosition({ x: 0, y: 0 });
   };
 
   return (
@@ -30,7 +30,7 @@ const Home = () => {
           <div
             className="greeting"
             style={{
-              transform: `rotateX(${rotate.y}deg) rotateY(${rotate.x}deg)`,
+              transform: `rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`,
               transition: '0.2s',
             }}
           >

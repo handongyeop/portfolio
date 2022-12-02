@@ -122,14 +122,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-a {
-  color: rgb(122, 119, 119);
-  text-decoration: none;
-  outline: none;
-}
-a:visited {
-  color: rgb(122, 119, 119);
-}
-a:hover {
-  color: rgb(236, 66, 66);
-}

@@ -2,11 +2,11 @@
 
 ### 리액트
 
-- npm i react-router-dom
+- npm install react-router-dom
 - npm install redux react-redux @reduxjs/toolkit
 - npm install --save styled-components
-- npm install @material-ui/core --legacy-peer-deps
-- npm install @material-ui/icons --legacy-peer-deps
+- npm install react-scroll
+- npm install swiper
 
 ### 프로젝트 세팅
 

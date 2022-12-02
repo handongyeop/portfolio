@@ -1,0 +1,41 @@
+#about {
+  background-color: rgb(240, 240, 240);
+  padding-top: 7rem;
+}
+
+#about .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#about .title {
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 600;
+  border-bottom: 0.1rem rgb(98, 96, 96) solid;
+}
+
+#about .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .content .info {
+  width: 33.333%;
+  display: flex;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+#about .content .info > div:first-child {
+  margin-right: 10px;
+}
+
+#about .content .info:nth-child(7),
+#about .content .info:nth-child(8) {
+  width: 50%;
+  display: flex;
+}

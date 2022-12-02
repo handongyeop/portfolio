@@ -1,0 +1,93 @@
+#archiving {
+  background-image: url('../../public/images/library.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#archiving .shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#archiving .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-top: 7rem;
+}
+
+#archiving .title {
+  color: var(--color-white);
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 600;
+  border-bottom: 0.1rem var(--color-white) solid;
+}
+
+#archiving .content {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+#archiving .content .github,
+#archiving .content .tistory {
+  width: 95%;
+  margin: 1rem auto;
+  padding: 20px 0 40px;
+  background-color: white;
+  border-radius: 1rem;
+  transition: 0.3s;
+}
+
+#archiving .content .github:hover,
+#archiving .content .tistory:hover {
+  transform: translateY(-5px);
+}
+
+#archiving .content .github h3,
+#archiving .content .tistory h3 {
+  display: block;
+  width: 80%;
+  padding-bottom: 15px;
+  margin: 0 auto 15px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--color-border);
+  text-align: center;
+}
+
+#archiving .content .github p.url,
+#archiving .content .tistory p.url {
+  font-size: 1.3rem;
+  color: var(--color-link);
+  font-weight: 600;
+  text-align: center;
+}
+
+#archiving .content .github:hover p.url,
+#archiving .content .tistory:hover p.url {
+  color: var(--color-link-focus);
+}
+
+#archiving .content .github p.desc,
+#archiving .content .tistory p.desc {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#archiving .content .github ul,
+#archiving .content .tistory ul {
+  width: 70%;
+  margin: 0 auto;
+  list-style-type: disc;
+}
+
+#archiving .content .github ul li,
+#archiving .content .tistory ul li {
+  margin-top: 10px;
+}

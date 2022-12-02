@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { floatReducer } from './redux/FloatReducer';
+import { scrollReducer } from './reducers/Scrollreducer';
 
 const store = configureStore({
   reducer: {
-    float: floatReducer,
+    scrollY: scrollReducer,
   },
 });
 

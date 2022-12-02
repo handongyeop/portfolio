@@ -5,23 +5,69 @@
   font-weight: normal;
   font-style: normal;
 }
-
-body {
-  font-family: 'GmarketSansMedium', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 10px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v71/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDBxG-ej.woff2)
+    format('woff2');
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+html {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-font: #1d1d1d;
+  --color-font-darkgray: #6e6e6e;
+  --color-font-middlegray: #b7b7b7;
+  --color-font-lightgray: #f5f5f5;
+  --color-link: #0071e3;
+  --color-link-focus: #81b9f1;
+  --color-border: #d2d2d2;
+  --color-header: #3a3a3a;
+  --color-section: #f5f5f5;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  word-break: keep-all;
+}
+body {
+  font-size: 16px;
+  line-height: 1;
+  font-family: 'GmarketSansMedium', serif;
+  word-break: keep-all;
+  color: var(--color-font);
+}
+a {
+  color: var(--color-font);
+  text-decoration: none;
+}
+img {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+p {
+  line-height: 1.6;
+}
+.inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }

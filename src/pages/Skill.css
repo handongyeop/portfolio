@@ -1,0 +1,51 @@
+#skill {
+  background-color: rgba(229, 239, 49, 0.863);
+  padding-top: 7rem;
+}
+
+#skill .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+#skill .title {
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 600;
+  border-bottom: 0.1rem rgb(98, 96, 96) solid;
+}
+
+#skill .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#skill .content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+#skill .content > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#skill .content .deployment {
+  width: 50%;
+}
+#skill .content .version {
+  width: 50%;
+}
+#skill .content .communication {
+  width: 50%;
+}
+#skill .content .certificate {
+  width: 50%;
+}

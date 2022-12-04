@@ -14,10 +14,10 @@ const Archiving = () => {
             <div
               className="github"
               onClick={() => {
-                window.open('https://github.com/handongyeop', '_blank');
+                window.open('https://github.com/handongyeop');
               }}
             >
-              <Icon url="github-icon" size="6" center="true">
+              <Icon url="github-icon" boxsize="6" center="true">
                 github
               </Icon>
               <h3>GitHub</h3>
@@ -32,10 +32,15 @@ const Archiving = () => {
             <div
               className="tistory"
               onClick={() => {
-                window.open('https://humble-developer.tistory.com', '_blank');
+                window.open('https://humble-developer.tistory.com');
               }}
             >
-              <Icon className="icon" url="tistory-icon" size="6" center="true">
+              <Icon
+                className="icon"
+                url="tistory-icon"
+                boxsize="6"
+                center="true"
+              >
                 tistory
               </Icon>
               <h3>TISTORY</h3>

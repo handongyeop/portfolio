@@ -1,6 +1,6 @@
-import React from "react";
-import "./Footer.css";
-import Icon from "./Icon";
+import React from 'react';
+import './Footer.css';
+import Icon from './Icon';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -9,13 +9,13 @@ const Footer = () => {
     <footer>
       <div className="inner">
         <div className="icon-wrapper">
-          <Icon url="" size="5" circle="true">
+          <Icon url="github-icon" boxsize="5" bgsize="150" isCircle="true">
             github
           </Icon>
-          <Icon url="" size="5" circle="true">
+          <Icon url="" boxsize="5" isCircle="true">
             github
           </Icon>
-          <Icon url="" size="5" circle="true">
+          <Icon url="" boxsize="5" isCircle="true">
             github
           </Icon>
         </div>

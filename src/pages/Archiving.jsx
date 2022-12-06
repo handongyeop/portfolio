@@ -1,6 +1,6 @@
 import React from 'react';
 import './Archiving.css';
-import Icon from './../components/Icon';
+import Icon from '../components/Icon';
 
 const Archiving = () => {
   return (

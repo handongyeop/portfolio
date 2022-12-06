@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const ScrollSlice = createSlice({
-  name: "scrollY",
+  name: 'scrollY',
   initialState: {
     value: 0,
   },

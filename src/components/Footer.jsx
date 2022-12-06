@@ -9,13 +9,28 @@ const Footer = () => {
     <footer>
       <div className="inner">
         <div className="icon-wrapper">
-          <Icon url="github-icon" boxsize="5" bgsize="150" isCircle="true">
+          <Icon
+            link="https://github.com/handongyeop"
+            url="github-icon"
+            boxsize="5"
+            bgsize="150"
+            isCircle="true"
+          >
             github
           </Icon>
-          <Icon url="" boxsize="5" isCircle="true">
+          <Icon
+            link="https://humble-developer.tistory.com"
+            url="tistory-icon-black"
+            boxsize="5"
+            isCircle="true"
+          >
             github
           </Icon>
-          <Icon url="" boxsize="5" isCircle="true">
+          <Icon
+            link="https://www.instagram.com/hd_yeobi/"
+            url="instagram-icon"
+            boxsize="5"
+          >
             github
           </Icon>
         </div>

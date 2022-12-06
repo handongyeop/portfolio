@@ -21,14 +21,15 @@
   display: flex;
   flex-wrap: nowrap;
   position: relative;
-  height: 800px;
+  height: 900px;
 }
 
-#project .swiper {
+#project .content .swiper {
   width: 2700px;
+  height: 100%;
   position: absolute;
-  left: -85%;
-  height: 800px;
+  left: 50%;
+  margin-left: -1350px;
   padding-bottom: 2rem;
 }
 

@@ -2,11 +2,11 @@
 
 ### 리액트
 
-- npm install react-router-dom
 - npm install redux react-redux @reduxjs/toolkit
 - npm install --save styled-components
 - npm install react-scroll
 - npm install swiper
+- npm install react-markdown remark-gfm react-syntax-highlighter
 
 ### 프로젝트 세팅
 

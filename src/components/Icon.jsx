@@ -9,17 +9,17 @@ const StyledIcon = styled.div`
   background-position: center;
   background-image: url(${(props) => `./images/${props.url}.png`});
   margin: ${(props) => props.center && '0 auto'};
+  cursor: pointer;
 
   ${(props) =>
     props.isCircle &&
     css`
-      border: 2px solid white;
+      border: 5px solid white;
       border-radius: 50%;
-      cursor: pointer;
     `}
 `;
 
-const Icon = ({ url, boxsize, center, isCircle, bgsize, abc }) => {
+const Icon = ({ url, boxsize, center, isCircle, bgsize, link }) => {
   return (
     <StyledIcon
       boxsize={boxsize}
@@ -27,6 +27,13 @@ const Icon = ({ url, boxsize, center, isCircle, bgsize, abc }) => {
       url={url}
       center={center}
       isCircle={isCircle}
+      onClick={
+        link
+          ? () => {
+              window.open(link);
+            }
+          : () => {}
+      }
     ></StyledIcon>
   );
 };

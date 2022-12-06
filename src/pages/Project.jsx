@@ -5,6 +5,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Project.css';
 import { Navigation, Pagination } from 'swiper';
+import ProjectBox from '../components/ProjectBox';
+import { project1 } from '../data';
 
 const Project = () => {
   return (
@@ -24,10 +26,28 @@ const Project = () => {
             navigation={true}
             modules={[Pagination, Navigation]}
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide>
+              <ProjectBox
+                title={project1.title}
+                period={project1.period}
+                image={project1.image}
+                projectDesc={project1.projectDesc}
+                primaryFn={project1.primaryFn}
+                github={project1.github}
+                url={project1.url}
+                frontend={project1.frontend}
+                deploy={project1.deploy}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectBox />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectBox />
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>

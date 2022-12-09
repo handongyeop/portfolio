@@ -6,9 +6,7 @@ const About = () => {
   return (
     <section id="about">
       <div className="inner">
-        <div className="title">
-          <h2>ABOUT</h2>
-        </div>
+        <h2 className="title">ABOUT</h2>
         <div className="content">
           <div className="info">
             <Icon url={'name'} />

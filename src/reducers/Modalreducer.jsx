@@ -13,3 +13,17 @@ const ModalSlice = createSlice({
 });
 export const modalAction = ModalSlice.actions;
 export const modalReducer = ModalSlice.reducer;
+
+const ReadMeSlice = createSlice({
+  name: 'readMe',
+  initialState: {
+    value: ``,
+  },
+  reducers: {
+    setReadMe: (state, action) => {
+      state.value = action.payload.readMe;
+    },
+  },
+});
+export const readMeAction = ReadMeSlice.actions;
+export const readMeReducer = ReadMeSlice.reducer;

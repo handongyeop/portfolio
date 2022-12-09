@@ -1,16 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { modalAction } from '../reducers/Modalreducer';
+import { modalAction, readMeAction } from '../reducers/Modalreducer';
+import { slideAction } from './../reducers/Slidereducer';
 
 const ProjectWrapper = styled.div`
   height: 100%;
 `;
 
-const ProjectTitle = styled.div`
+const ProjectTitle = styled.h3`
   height: 10%;
   margin-top: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -37,6 +38,12 @@ const ProjectImage = styled.div`
   border: 1px solid black;
   margin: 1rem;
   background-image: url(${(props) => `./images/${props.image}.png`});
+  background-repeat: no-repeat;
+  transition: 0.6s;
+`;
+
+const ImageController = styled.p`
+  text-align: center;
 `;
 
 const ProjectDesc = styled.div`
@@ -46,7 +53,7 @@ const ProjectDesc = styled.div`
   padding: 1rem;
 `;
 
-const DescInfo = styled.div`
+const DescInfo = styled.article`
   word-wrap: break-word;
   line-height: 1.2;
 `;
@@ -108,6 +115,8 @@ const ProjectBox = ({
   title,
   period,
   image,
+  imageH,
+  readMe,
   projectDesc,
   primaryFn,
   github,
@@ -117,13 +126,44 @@ const ProjectBox = ({
   database,
   deploy,
 }) => {
+  const slideY = useSelector((state) => state.slideY.value);
   const dispatch = useDispatch();
+
   return (
     <ProjectWrapper>
       <ProjectTitle>{title}</ProjectTitle>
       <ProjectPeriod>{period}</ProjectPeriod>
       <ProjectContent>
-        <ProjectImage image={image}></ProjectImage>
+        <div>
+          <ProjectImage
+            style={{
+              backgroundPositionY: `${slideY}px`,
+              transition: '0.5s ease',
+            }}
+            image={image}
+          ></ProjectImage>
+          <ImageController>
+            <button
+              onClick={() => {
+                slideY === -imageH + 400
+                  ? dispatch(slideAction.prevEnd(imageH))
+                  : slideY < 0 && dispatch(slideAction.prev());
+              }}
+            >
+              ◀
+            </button>{' '}
+            <button
+              onClick={() => {
+                slideY < -imageH + 800
+                  ? slideY !== -imageH + 400 &&
+                    dispatch(slideAction.nextEnd(imageH))
+                  : dispatch(slideAction.next());
+              }}
+            >
+              ▶
+            </button>
+          </ImageController>
+        </div>
         <ProjectDesc>
           <DescInfo
             dangerouslySetInnerHTML={{ __html: projectDesc }}
@@ -131,6 +171,7 @@ const ProjectBox = ({
           <DescReadme
             onClick={() => {
               dispatch(modalAction.toggleModal());
+              dispatch(readMeAction.setReadMe({ readMe }));
             }}
             tabIndex={-1}
           >

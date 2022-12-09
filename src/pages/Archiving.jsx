@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Archiving.css';
 import Icon from '../components/Icon';
 
 const Archiving = () => {
+  const archivingRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            entry.target.classList.remove('show');
+          } else {
+            entry.target.classList.add('show');
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    archivingRefs.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+  }, [archivingRefs]);
+
   return (
     <section id="archiving">
       <div className="shadow">
         <div className="inner">
-          <div className="title">
-            <h2>ARCHIVING</h2>
-          </div>
+          <h2 className="title">ARCHIVING</h2>
           <div className="content">
             <div
               className="github"
+              ref={(el) => (archivingRefs.current[0] = el)}
               onClick={() => {
                 window.open('https://github.com/handongyeop');
               }}
@@ -31,6 +51,7 @@ const Archiving = () => {
             </div>
             <div
               className="tistory"
+              ref={(el) => (archivingRefs.current[1] = el)}
               onClick={() => {
                 window.open('https://humble-developer.tistory.com');
               }}

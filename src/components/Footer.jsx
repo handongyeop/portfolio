@@ -24,14 +24,23 @@ const Footer = () => {
             boxsize="5"
             isCircle="true"
           >
-            github
+            tistory
           </Icon>
           <Icon
             link="https://www.instagram.com/hd_yeobi/"
             url="instagram-icon"
             boxsize="5"
           >
-            github
+            instagram
+          </Icon>
+          <Icon
+            link="https://m.facebook.com/profile.php?id=100002148660280"
+            url="facebook-icon"
+            boxsize="5"
+            isCircle="true"
+            bgsize="110"
+          >
+            facebook
           </Icon>
         </div>
         <p>© {year} Han Dong Yeop. All Rights Reserved.</p>

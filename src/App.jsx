@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -11,8 +10,6 @@ import Project from './pages/Project';
 import Skill from './pages/Skill';
 
 function App() {
-  const modal = useSelector((state) => state.modal.value);
-
   return (
     <div>
       <Header />

@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useSelector, useDispatch } from 'react-redux';
+import remarkGemoji from 'remark-gemoji';
 import remarkGfm from 'remark-gfm';
 import styled from 'styled-components';
 import { modalAction } from './../reducers/Modalreducer';
 
-const StyledMarkDown = styled.div`
+const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  font-size: 1rem;
-  line-height: 2.5rem;
-  background-color: white;
   z-index: 10;
   visibility: visible;
   opacity: 1;
@@ -24,11 +20,19 @@ const StyledMarkDown = styled.div`
     visibility: hidden;
     opacity: 0;
   }
+`;
+
+const StyledMarkDown = styled.div`
+  position: relative;
+  top: 4rem;
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  line-height: 2.5rem;
+  background-color: white;
+  overflow: auto;
 
   & > .react-Markdown {
-    position: relative;
-    top: 4rem;
-    margin: 2rem 8rem;
+    margin: 4rem 8rem;
   }
 `;
 
@@ -40,6 +44,9 @@ const ModalHeader = styled.div`
   width: 100%;
   height: 4rem;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
   font-size: 2rem;
   color: white;
   background-color: black;
@@ -49,42 +56,29 @@ const ModalCloser = styled.div`
   cursor: pointer;
 `;
 
-const ModalMD = (readMe) => {
+const ModalMD = () => {
   const modal = useSelector((state) => state.modal.value);
+  const readMe = useSelector((state) => state.readMe.value);
   const dispatch = useDispatch();
   document.body.className = modal ? 'modal-open' : '';
-  const markdown = `
-  # 목록(List)
-  ### 목록
-
-  1. 순서가 필요한 목록
-  1. 순서가 필요한 목록
-  1. 순서가 필요한 목록
-     1. 순서가 필요한 목록
-     1. 순서가 필요한 목록
-  1. 순서가 필요한 목록
-  
-  - 순서가 필요없는 목록
-  - 순서가 필요없는 목록
-  - 순서가 필요없는 목록
-    - 순서가 필요하지 않은 목록
-    - 순서가 필요하지 않은 목록
-  - 순서가 필요하지 않은 목록
-  `;
+  const markdown = `${readMe}`;
   return (
-    <StyledMarkDown className={modal ? '' : 'hidden'}>
+    <ModalWrapper className={modal ? '' : 'hidden'}>
       <ModalHeader>
         README.md
         <ModalCloser onClick={() => dispatch(modalAction.toggleModal())}>
           X
         </ModalCloser>
       </ModalHeader>
-      <ReactMarkdown
-        className="react-Markdown"
-        remarkPlugins={[remarkGfm]}
-        children={markdown}
-      ></ReactMarkdown>
-    </StyledMarkDown>
+      <StyledMarkDown>
+        <ReactMarkdown
+          className="react-Markdown"
+          remarkPlugins={[remarkGfm, remarkGemoji]}
+          children={markdown}
+          components={{}}
+        ></ReactMarkdown>
+      </StyledMarkDown>
+    </ModalWrapper>
   );
 };
 

@@ -45,6 +45,7 @@ header ul.nav li {
   position: relative;
   font-size: 1.2rem;
   padding: 1rem;
+  list-style: none;
 }
 
 header ul.nav li:first-child::before {

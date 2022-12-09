@@ -41,12 +41,29 @@
   padding: 20px 0 40px;
   background-color: white;
   border-radius: 1rem;
-  transition: 0.3s;
   cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s, visibility 1s, opacity 1s;
 }
 
-#archiving .content .github:hover,
-#archiving .content .tistory:hover {
+#archiving .content .github {
+  transform: translateX(-300px);
+}
+
+#archiving .content .tistory {
+  transform: translateX(300px);
+}
+
+#archiving .content .github.show,
+#archiving .content .tistory.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+#archiving .content .github.show:hover,
+#archiving .content .tistory.show:hover {
   transform: translateY(-5px);
 }
 

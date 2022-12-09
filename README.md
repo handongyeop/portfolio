@@ -6,7 +6,8 @@
 - npm install --save styled-components
 - npm install react-scroll
 - npm install swiper
-- npm install react-markdown remark-gfm react-syntax-highlighter
+- npm install react-markdown remark-gfm react-syntax-highlighter remark-gemoji
+- npm install react-intersection-observer --save
 
 ### 프로젝트 세팅
 

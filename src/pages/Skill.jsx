@@ -22,6 +22,9 @@ const Skill = () => {
             <SkiilBox url="redux" size="95">
               Redux, Redux-tool-kit
             </SkiilBox>
+            <SkiilBox url="styled-components" size="70">
+              Styled-components
+            </SkiilBox>
             <SkiilBox url="bootstrap" size="115">
               Bootstrap
             </SkiilBox>

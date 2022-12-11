@@ -22,7 +22,7 @@ export const project2 = {
   period: '2022.11 (클론 코딩)',
   image: 'iPad',
   imageH: 0,
-  projectDesc: '',
+  projectDesc: '반응형 웹을 더 공부하기 위해 제작한 아이패드 웹사이트입니다.',
   readMe: `
   `,
   primaryFn:

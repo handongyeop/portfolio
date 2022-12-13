@@ -9,7 +9,7 @@ const ProjectWrapper = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  height: 10%;
+  height: 80px;
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: 600;
@@ -19,7 +19,7 @@ const ProjectTitle = styled.h3`
 `;
 
 const ProjectPeriod = styled.p`
-  height: 5%;
+  height: 40px;
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1.1rem;
@@ -28,6 +28,11 @@ const ProjectPeriod = styled.p`
 const ProjectContent = styled.div`
   height: 85%;
   display: flex;
+
+  @media (max-width: 740px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -39,7 +44,7 @@ const ProjectImage = styled.div`
   margin: 1rem;
   background-image: url(${(props) => `./images/${props.image}.png`});
   background-repeat: no-repeat;
-  transition: 0.6s;
+  transition: ${(props) => (props.idx === 2 ? '0s' : '0.6s')};
 `;
 
 const ImageController = styled.p`
@@ -51,6 +56,15 @@ const ProjectDesc = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  @media (max-width: 1000px) {
+    width: 45%;
+    font-size: 0.8em;
+    @media (max-width: 740px) {
+      width: 90%;
+      height: 50%;
+    }
+  }
 `;
 
 const DescInfo = styled.article`
@@ -112,6 +126,7 @@ const SettingContent = styled.div`
 `;
 
 const ProjectBox = ({
+  idx,
   title,
   period,
   image,
@@ -126,7 +141,7 @@ const ProjectBox = ({
   database,
   deploy,
 }) => {
-  const slideY = useSelector((state) => state.slideY.value);
+  const slideY = useSelector((state) => state.slideY.value[idx]);
   const dispatch = useDispatch();
 
   return (
@@ -138,16 +153,16 @@ const ProjectBox = ({
           <ProjectImage
             style={{
               backgroundPositionY: `${slideY}px`,
-              transition: '0.5s ease',
             }}
             image={image}
+            idx={idx}
           ></ProjectImage>
           <ImageController>
             <button
               onClick={() => {
-                slideY === -imageH + 400
-                  ? dispatch(slideAction.prevEnd(imageH))
-                  : slideY < 0 && dispatch(slideAction.prev());
+                idx !== 2 && slideY === -imageH + 400
+                  ? dispatch(slideAction.prevEnd({ idx: idx, imageH: imageH }))
+                  : slideY < 0 && dispatch(slideAction.prev(idx));
               }}
             >
               ◀
@@ -156,8 +171,8 @@ const ProjectBox = ({
               onClick={() => {
                 slideY < -imageH + 800
                   ? slideY !== -imageH + 400 &&
-                    dispatch(slideAction.nextEnd(imageH))
-                  : dispatch(slideAction.next());
+                    dispatch(slideAction.nextEnd({ idx: idx, imageH: imageH }))
+                  : dispatch(slideAction.next(idx));
               }}
             >
               ▶

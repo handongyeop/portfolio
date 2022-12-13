@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import './Project.css';
 import { Navigation, Pagination } from 'swiper';
 import ProjectBox from '../components/ProjectBox';
-import { project1, project2 } from '../data';
+import { project1, project2, project3 } from '../data';
 
 const Project = () => {
   return (
@@ -18,17 +18,24 @@ const Project = () => {
             centeredSlides={true}
             loop={true}
             spaceBetween={50}
-            slidesPerView={3}
-            touchRatio={0}
+            slidesPerView={1}
+            touchRatio={1}
             pagination={{
               type: 'bullets',
               clickable: 'true',
             }}
             navigation={true}
             modules={[Pagination, Navigation]}
+            breakpoints={{
+              1500: {
+                slidesPerView: 3,
+                touchRatio: 0,
+              },
+            }}
           >
             <SwiperSlide>
               <ProjectBox
+                idx={0}
                 title={project1.title}
                 period={project1.period}
                 image={project1.image}
@@ -44,6 +51,7 @@ const Project = () => {
             </SwiperSlide>
             <SwiperSlide>
               <ProjectBox
+                idx={1}
                 title={project2.title}
                 period={project2.period}
                 image={project2.image}
@@ -58,10 +66,20 @@ const Project = () => {
               />
             </SwiperSlide>
             <SwiperSlide>
-              <ProjectBox />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProjectBox />
+              <ProjectBox
+                idx={2}
+                title={project3.title}
+                period={project3.period}
+                image={project3.image}
+                imageH={project3.imageH}
+                readMe={project3.readMe}
+                projectDesc={project3.projectDesc}
+                primaryFn={project3.primaryFn}
+                github={project3.github}
+                url={project3.url}
+                frontend={project3.frontend}
+                deploy={project3.deploy}
+              />
             </SwiperSlide>
           </Swiper>
         </div>

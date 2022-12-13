@@ -32,20 +32,23 @@
 #skill .content > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.5rem;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
-#skill .content .deployment {
-  width: 50%;
-}
-#skill .content .version {
-  width: 50%;
-}
-#skill .content .communication {
-  width: 50%;
-}
+#skill .content .deployment,
+#skill .content .version,
+#skill .content .communication,
 #skill .content .certificate {
   width: 50%;
+}
+
+@media (max-width: 740px) {
+  #skill .content .deployment,
+  #skill .content .version,
+  #skill .content .communication,
+  #skill .content .certificate {
+    width: 100%;
+  }
 }

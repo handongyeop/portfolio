@@ -6,6 +6,7 @@ const Archiving = () => {
   const archivingRefs = useRef([]);
 
   useEffect(() => {
+    // Intersection OBserver API 사용해서 애니메이션 적용
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

@@ -66,6 +66,7 @@
   color: var(--color-black);
   padding: 110px 20px 0;
   transform: rotateY(-180deg);
+  border: 3px solid gray;
 }
 
 #home .greeting:hover .content {

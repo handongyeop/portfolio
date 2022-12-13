@@ -109,3 +109,9 @@
 #archiving .content .tistory ul li {
   margin-top: 10px;
 }
+
+@media (max-width: 740px) {
+  #archiving .content {
+    flex-wrap: wrap;
+  }
+}

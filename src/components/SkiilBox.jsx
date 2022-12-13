@@ -16,6 +16,17 @@ const SkillBoxIcon = styled.div`
     background-color: #ff9c00;
     transform: scale(1.2);
   }
+
+  @media (max-width: 1000px) {
+    width: 100px;
+    height: 100px;
+    transform: scale(0.8);
+    margin: -0.5rem;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
 `;
 
 const SkillImage = styled.div`

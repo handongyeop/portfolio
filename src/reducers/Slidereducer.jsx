@@ -3,20 +3,20 @@ import { createSlice } from '@reduxjs/toolkit';
 const SlideSlice = createSlice({
   name: 'slideY',
   initialState: {
-    value: 0,
+    value: [0, 0, 0, 0],
   },
   reducers: {
-    prev: (state) => {
-      state.value += 400;
+    prev: (state, action) => {
+      state.value[action.payload] += 400;
     },
-    next: (state) => {
-      state.value -= 400;
+    next: (state, action) => {
+      state.value[action.payload] -= 400;
     },
     prevEnd: (state, action) => {
-      state.value += action.payload % 400;
+      state.value[action.payload.idx] += action.payload.imageH % 400;
     },
     nextEnd: (state, action) => {
-      state.value -= action.payload % 400;
+      state.value[action.payload.idx] -= action.payload.imageH % 400;
     },
   },
 });

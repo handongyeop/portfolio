@@ -21,7 +21,7 @@
   display: flex;
   flex-wrap: nowrap;
   position: relative;
-  height: 900px;
+  height: 800px;
 }
 
 #project .content .swiper {
@@ -86,4 +86,25 @@
 
 #project .swiper-pagination-bullet-active {
   background-color: rgba(17, 160, 216, 0.803);
+}
+
+@media (max-width: 1500px) {
+  #project .content .swiper {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    padding-bottom: 2rem;
+  }
+
+  #project .swiper-button-prev,
+  #project .swiper-button-next {
+    display: none;
+  }
+
+  @media (max-width: 740px) {
+    #project .content {
+      height: 1100px;
+    }
+  }
 }

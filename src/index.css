@@ -29,9 +29,9 @@ html {
   --color-header: #3a3a3a;
   --color-section: #f5f5f5;
   --color-shadow: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
 }
 body {
-  font-size: 16px;
   line-height: 1;
   font-family: 'GmarketSansMedium', serif;
   word-break: keep-all;
@@ -62,25 +62,16 @@ strong {
   position: relative;
 }
 
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
-
 .font-red {
   color: rgb(246, 56, 56);
 }
 
 body.modal-open {
   overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: calc(16px * 0.8);
+  }
 }

@@ -81,6 +81,30 @@
   background-image: url('../../public/images/sprite_wifi.png');
 }
 
+@media (max-width: 1040px) {
+  #home .greeting .title,
+  #home .greeting .content {
+    width: calc(450px * 0.8);
+    height: calc(450px * 0.8);
+  }
+
+  #home .greeting .title h1 {
+    top: -30px;
+  }
+
+  #home .greeting .content {
+    line-height: 1.8rem;
+  }
+
+  .icon--wifi {
+    width: 100px;
+    height: 100px;
+    margin: 60px auto 0;
+    animation: sprite-icon 3s steps(1) infinite;
+    background-image: url('../../public/images/sprite_wifi.png');
+  }
+}
+
 @keyframes sprite-icon {
   /* 1~10 */
   0.00% {

@@ -74,4 +74,9 @@ body.modal-open {
   html {
     font-size: calc(16px * 0.8);
   }
+
+  strong {
+    font-weight: 600;
+    font-size: 1rem;
+  }
 }

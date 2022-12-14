@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
@@ -21,7 +21,7 @@ const MenuMoblie = styled.button`
   top: 10px;
   right: 20px;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   background-color: #ffffff69;
   padding: 2px;
@@ -41,15 +41,31 @@ const Header = () => {
 
   const [menu, setMenu] = useState(false);
 
+  const sidebarRef = useRef();
+  const headerRef = useRef();
+  useEffect(() => {
+    document.body.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (sidebarRef && !headerRef.current.contains(event.target)) {
+      setMenu(false);
+    }
+  };
+
   return (
-    <header className={scrollY > 50 ? '' : 'transparent'}>
+    <header ref={headerRef} className={scrollY > 50 ? '' : 'transparent'}>
       <div className="inner">
         <div className="title">
           <Link to="home" smooth={true}>
             HDY's Portfolio
           </Link>
         </div>
-        <ul className={menu ? 'nav show' : 'nav'}>
+        <ul ref={sidebarRef} className={menu ? 'nav show' : 'nav'}>
           <li>
             <Link to="about" smooth={true}>
               About

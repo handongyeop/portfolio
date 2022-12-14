@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import './Project.css';
 import { Navigation, Pagination } from 'swiper';
 import ProjectBox from '../components/ProjectBox';
-import { project1, project2, project3 } from '../data';
+import { project1, project2, project3, project4 } from '../data';
 
 const Project = () => {
   return (
@@ -79,6 +79,22 @@ const Project = () => {
                 url={project3.url}
                 frontend={project3.frontend}
                 deploy={project3.deploy}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectBox
+                idx={3}
+                title={project4.title}
+                period={project4.period}
+                image={project4.image}
+                imageH={project4.imageH}
+                readMe={project4.readMe}
+                projectDesc={project4.projectDesc}
+                primaryFn={project4.primaryFn}
+                github={project4.github}
+                url={project4.url}
+                frontend={project4.frontend}
+                deploy={project4.deploy}
               />
             </SwiperSlide>
           </Swiper>

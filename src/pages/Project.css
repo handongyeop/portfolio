@@ -102,9 +102,26 @@
     display: none;
   }
 
-  @media (max-width: 740px) {
+  @media (max-width: 1040px) {
     #project .content {
-      height: 1100px;
+      height: 700px;
+    }
+
+    @media (max-width: 740px) {
+      #project .content {
+        height: 1000px;
+      }
+
+      @media (max-width: 450px) {
+        #project .content {
+          height: 900px;
+        }
+
+        #project .swiper-pagination-bullet {
+          width: calc(20px * 0.8);
+          height: calc(20px * 0.8);
+        }
+      }
     }
   }
 }

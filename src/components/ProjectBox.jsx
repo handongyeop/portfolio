@@ -16,6 +16,13 @@ const ProjectTitle = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 740px) {
+    height: 50px;
+
+    @media (max-width: 450px) {
+      font-size: calc(1.7rem * 0.8);
+    }
+  }
 `;
 
 const ProjectPeriod = styled.p`
@@ -23,6 +30,11 @@ const ProjectPeriod = styled.p`
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1.1rem;
+
+  @media (max-width: 740px) {
+    height: 20px;
+    font-size: 1rem;
+  }
 `;
 
 const ProjectContent = styled.div`
@@ -45,6 +57,10 @@ const ProjectImage = styled.div`
   background-image: url(${(props) => `./images/${props.image}.png`});
   background-repeat: no-repeat;
   transition: ${(props) => (props.idx === 2 ? '0s' : '0.6s')};
+  @media (max-width: 450px) {
+    transform: scale(0.8);
+    margin: -2rem auto;
+  }
 `;
 
 const ImageController = styled.p`
@@ -59,10 +75,15 @@ const ProjectDesc = styled.div`
 
   @media (max-width: 1000px) {
     width: 45%;
-    font-size: 0.8em;
+
     @media (max-width: 740px) {
       width: 90%;
       height: 50%;
+
+      @media (max-width: 450px) {
+        font-size: 0.8rem;
+        height: 60%;
+      }
     }
   }
 `;

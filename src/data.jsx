@@ -91,7 +91,7 @@ export const project4 = {
   readMe: `
   `,
   primaryFn:
-    '자기소개, 인적사항, 기술 스택 및 자격증, github&blog 링크, 프로젝트 경험, README 페이지 구현',
+    '자기소개, 인적사항, 기술 스택 및 자격증, github&blog 링크, 프로젝트 경험',
   github: 'https://github.com/handongyeop/portfolio',
   url: 'https://hdy-portfolio.vercel.app',
   frontend: 'Html, Css, JavaScript, React, Redux-Toolkit, Styled-Components',

@@ -94,6 +94,7 @@ const DescInfo = styled.article`
 `;
 
 const DescReadme = styled.button`
+  visibility: hidden;
   width: 130px;
   padding: 10px;
   margin: 1rem auto;

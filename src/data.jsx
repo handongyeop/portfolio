@@ -64,7 +64,7 @@ export const project2 = {
 };
 
 export const project3 = {
-  title: '연습 프로젝트(미니게임 TicTacToe)',
+  title: '토이 프로젝트(미니게임 TicTacToe)',
   period: '2022.11 (클론 코딩)',
   image: 'tictactoe',
   imageH: 1600,
